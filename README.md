@@ -5,8 +5,8 @@
  - **修改位置编码实现内插、外推**
  - **稀疏注意力（Sparse Attention）**
 
-| 年份 | 技术路线 | 标题（arxiv链接）| 简介 | 代码 | 实测效果 |
-|--|----|------:|:--------:|--|----|
+| 年份 | 技术路线 | 标题（arxiv| 简介 | 代码 | 实测效果 |
+|--|----|------|:--------:|--|----|
 | 2023.10 | 稀疏注意力 | [Ring Attention with Blockwise Transformers for Near-Infinite Context](http://arxiv.org/abs/2310.01889) | 。。 | 。。 | / |
 | 2023.9 | 位置编码PI+高效Finetune探索、继续\从头Pretrain | [Effective Long-Context Scaling of Foundation Models](http://arxiv.org/abs/2309.16039) | ![image](https://github.com/CxsGhost/LLM_LongContext/blob/main/images/effective-1.png)![image](https://github.com/CxsGhost/LLM_LongContext/blob/main/images/effective-2.png)全文以实验和分析为主，通过线性缩放插值改进位置编码（rope、xpos），然后在混合长上下文数据上“继续”预训练+指令微调，以较低的成本达到了较好的效果。还从头训练llama，对比了在不同阶段切换到长文本数据的最终效果，结果显示先以短文本训练，在中后期切换到长文本，最终性能几乎没有损失，并极大减少了计算量。 | / | / |
 | 2023.9 | 稀疏注意力+位置编码PI+Finetune | [LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models](http://arxiv.org/abs/2309.12307) | ![image](https://github.com/CxsGhost/LLM_LongContext/blob/main/images/longlora.png)提出了一种稀疏注意力：shift short attention，以及新微调方法LoRA+（LoRA+解冻embedding层和norm层），结合位置编码改进（PI、NTK-aware）对llama进行微调，效果接近全量微调，极大节省计算成本。 | [官方](https://github.com/dvlab-research/LongLoRA) | / |
